@@ -26,13 +26,15 @@ export default async function MainBlog() {
       })
 
   return (
-    <div className="aspect-[16/6] grid [grid-template-columns:1.75fr_1fr] gap-8 mb-4">
-        <div className="bg-[#03cdfd] h-full"></div>
+    <div className="grid [grid-template-columns:1.75fr_1fr] gap-8 mb-4">
+        <div className="bg-[#03cdfd] aspect-video overflow-hidden">
+          <img src={post.mainImage.asset.url} alt="" /> 
+        </div>
         <div className="h-full py-8">
-            <span className="self-end text-gray-700">{publishedAt}</span>
+            <span className="text-gray-700">{publishedAt}</span>
             <h2 className="text-4xl my-4 font-semibold">{post.title}</h2>
-            <p>{post.short}</p>
-            <a href="" className="py-2 px-4 text-sm bg-[#03cdfd] inline-block mt-8 hover:bg-[#397dd6]">READ MORE</a>     
+            <p className="line-clamp-2 text-gray-700">{post.short}</p>
+            <a href="" className="py-2 px-4 text-sm text-white bg-gray-600 inline-block mt-8 hover:bg-[#397dd6]">READ MORE</a>     
         </div>    
     </div>
   )
