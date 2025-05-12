@@ -33,6 +33,7 @@ export default async function BlogContainer() {
         {post.slice(1).map((post) =>  (
             <BlogCard
                 key={post._id}
+                id={post._id}
                 publishedAt={readableDate(post.publishedAt)}
                 title={post.title}
                 short={post.short}
