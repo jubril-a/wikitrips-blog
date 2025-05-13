@@ -7,11 +7,14 @@ export default function page() {
 
   return (
     <>
-      <Suspense fallback={<p>Loading post...</p>}>
+      <Suspense fallback={
+        <div className="grid justify-center items-center h-svh">
+          <div className="loader"></div>
+        </div>}>
         <Blog />
+        <Session />
+        <Footer />
       </Suspense>
-      <Session />
-      <Footer />
     </>
   )
 }
