@@ -1,5 +1,13 @@
 import BlogCard from "./BlogCard"
-import { client } from "../../src/sanity/client";
+import { createClient } from 'next-sanity'
+
+const client = createClient({
+  apiVersion: '2025-05-08',
+  dataset: 'production',
+  projectId: '8zi7n528',
+  useCdn: false,
+})
+
 
 const POSTS_QUERY = `
 *[_type == "post"] | order(publishedAt desc) {
