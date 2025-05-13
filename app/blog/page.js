@@ -1,9 +1,9 @@
-import { client } from "../src/sanity/client";
-import Hero from "./components/Hero";
-import MainBlog from "./components/MainBlog";
-import BlogContainer from "./components/BlogContainer";
-import Session from "./components/Session";
-import Footer from "./components/Footer";
+import { client } from "../../src/sanity/client";
+import Hero from "../components/Hero";
+import MainBlog from "../components/MainBlog";
+import BlogContainer from "../components/BlogContainer";
+import Session from "../components/Session";
+import Footer from "../components/Footer";
 
 const POSTS_QUERY = `
 *[_type == "post"][0]{
