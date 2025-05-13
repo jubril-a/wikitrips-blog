@@ -53,41 +53,39 @@ import Header from "./Header";
 import Body from "./Body";
 
 const client = createClient({
-    apiVersion: "2025-05-08",
-    dataset: "production",
-    projectId: "8zi7n528",
-    useCdn: false,
-})
+  apiVersion: "2025-05-08",
+  dataset: "production",
+  projectId: "8zi7n528",
+  useCdn: false,
+});
 
 export default function Blog() {
-    const searchParams = useSearchParams()
-    const postId = searchParams.get("post_id")
-    const [post, setPost] = useState(null)
+  const searchParams = useSearchParams();
+  const postId = searchParams.get("post_id");
+  const [post, setPost] = useState(null);
 
-    useEffect(() => {
-        if (!postId) return;
+  useEffect(() => {
+    if (!postId) return;
 
-        const fetchPost = async () => {
-            const POSTS_QUERY = `*[_type == "post" && _id == "${postId}"][0]{title, short, publishedAt, mainImage{asset->{url}}, body}`
-            const fetchedPost = await client.fetch(POSTS_QUERY)
-            setPost(fetchedPost)
-        }
+    const fetchPost = async () => {
+      const POSTS_QUERY = `*[_type == "post" && _id == "${postId}"][0]{title, short, publishedAt, mainImage{asset->{url}}, body}`;
+      const fetchedPost = await client.fetch(POSTS_QUERY);
+      setPost(fetchedPost);
+    };
 
-        fetchPost()
-    }, [postId])
+    fetchPost();
+  }, [postId]);
 
-    if (!post) {
-        return (
-            <div className="grid justify-center items-center h-svh">
-                <div class="loader"></div>
-            </div>
-        )
-    }
+  if (!post) return <p>Loading post data...</p>;
 
-    return (
-        <div className="max-w-[680px] m-auto mt-9">
-            <Header h1={post.title} description={post.short} imgUrl={post.mainImage?.asset?.url} />
-            <Body content={post.body} />
-        </div>
-    )
+  return (
+    <div className="max-w-[680px] m-auto mt-9">
+      <Header
+        h1={post.title}
+        description={post.short}
+        imgUrl={post.mainImage?.asset?.url}
+      />
+      <Body content={post.body} />
+    </div>
+  );
 }
