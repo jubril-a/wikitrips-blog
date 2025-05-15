@@ -54,7 +54,7 @@ export default function MainBlog() {
       </div>
       <div className="h-full min-[760px]:py-8">
         <span className="text-gray-700">{publishedAt}</span>
-        <h2 className="text-4xl my-4 font-semibold">{post.title}</h2>
+        <h2 className="text-2xl min-[760px]:text-4xl my-4 font-semibold">{post.title}</h2>
         <p className="line-clamp-2 text-gray-700">{post.short}</p>
         <a href={`/post?post_id=${post._id}`} className="py-2 px-4 text-sm text-white bg-gray-600 inline-block mt-6 hover:bg-[#397dd6]">
           READ MORE
