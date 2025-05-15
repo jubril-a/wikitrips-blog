@@ -48,15 +48,15 @@ export default function MainBlog() {
   })
 
   return (
-    <div className="grid [grid-template-columns:1.75fr_1fr] gap-8 mb-4">
-      <div className="bg-[#03cdfd] aspect-video overflow-hidden">
+    <div className="grid min-[760px]:[grid-template-columns:1.75fr_1fr] gap-4 min-[760px]:gap-8 mb-8">
+      <div className="bg-[#03cdfd] max-[760px]:aspect-video overflow-hidden">
         <img src={post.mainImage.asset.url} alt="" className="object-cover w-full h-full" />
       </div>
-      <div className="h-full py-8">
+      <div className="h-full min-[760px]:py-8">
         <span className="text-gray-700">{publishedAt}</span>
         <h2 className="text-4xl my-4 font-semibold">{post.title}</h2>
         <p className="line-clamp-2 text-gray-700">{post.short}</p>
-        <a href={`/post?post_id=${post._id}`} className="py-2 px-4 text-sm text-white bg-gray-600 inline-block mt-8 hover:bg-[#397dd6]">
+        <a href={`/post?post_id=${post._id}`} className="py-2 px-4 text-sm text-white bg-gray-600 inline-block mt-6 hover:bg-[#397dd6]">
           READ MORE
         </a>
       </div>
