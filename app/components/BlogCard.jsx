@@ -2,7 +2,7 @@ const BlogCard = ({id, publishedAt, title, short, imgUrl}) => {
   return (
     <div>
         <div className="aspect-video bg-[#03cdfd] mb-4 overflow-hidden">
-          <img src={imgUrl} alt="" className="object-cover w-full" />
+          <img src={imgUrl} alt="" className="object-cover w-full h-full" />
         </div>
         <span className="text-gray-700">{publishedAt}</span>
         <h2 className="text-xl my-2 font-semibold">{title}</h2>
