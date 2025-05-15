@@ -49,7 +49,7 @@ function GetnDisplayPost() {
   }
 
   return (
-    <div className="max-w-[680px] mx-auto mt-9 px-4">
+    <div className="max-w-[680px] mx-auto mt-15 px-4">
       <Header
         publishedAt={readableDate(post.publishedAt)}
         h1={post.title}

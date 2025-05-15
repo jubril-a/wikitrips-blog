@@ -1,4 +1,4 @@
-const Header = ({publishedAt, h1, description, imgUrl}) => {
+const Header = ({h1, description, imgUrl}) => {
   return (
     <header>
         <h1 className="text-[36px] md:text-[42px] font-bold min-[680px]:leading-[52px] leading-[40px]">{h1}</h1>
