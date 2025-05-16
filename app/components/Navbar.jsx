@@ -5,7 +5,7 @@ import Image from "next/image"
 
 const LinkBox = ({href, img, head, desc}) => {
     return (
-        <a href={href} className="px-4 py-3 flex items-center gap-3 hover:bg-white rounded-xl">
+        <a href={href} className="sm:px-4 py-2 sm:py-3 flex items-center gap-3 sm:hover:bg-white rounded-xl">
             <img src={img} alt="" width={32} height={32} />
             <p>
                 <span className="font-medium">{head}</span><br />
@@ -34,19 +34,16 @@ const Navbar = () => {
                         <span>Services</span>
                         <Image src="/caret.png" width={12} height={12} alt="" />
                     </a>
-                    <a href="https://blog.wikitripstnt.com/" className="font-medium hover:text-primary max-sm:px-2 max-sm:py-4 max-sm:border-b-1 max-sm:border-gray-200">Blog</a>
-                    <a href="https://www.wikitripstnt.com/contact.html" className="font-medium hover:text-primary max-sm:px-2 max-sm:py-4">Contact</a>
                     {/* services dropdown */}
                     {isExpanded &&
-                    // <div className="fixed inset-0" onClick={() => alert("Hello World")}>
-                        <div className="absolute top-[120px] right-4 flex bg-[#eee] items-start py-8 rounded-xl min-w-[640px]">
-                            <div className="px-8 border-r-1 border-gray-300">
+                        <div className="sm:absolute sm:top-[120px] sm:right-4 sm:flex bg-[#eee] sm:items-start py-6 sm:py-8 sm:rounded-xl sm:min-w-[640px]">
+                            <div className="px-6 sm:px-8 sm:border-r-1 sm:border-gray-300">
                                 <LinkBox head="Visa" desc="Hassle-free visa services" href="https://www.wikitripstnt.com/visa.html" img="/passport.png" />
                                 <LinkBox head="Tours" desc="Discover exciting destinations" href="https://www.wikitripstnt.com/tour.html" img="/tour.png" />
                                 <LinkBox head="Flight" desc="Find and book flights effortlessly" href="https://www.wikitripstnt.com/flights.html" img="/plane.png" />
                                 <LinkBox head="Study" desc="Guidance for studying overseas" href="https://www.wikitripstnt.com/study.html" img="/study.png"/>
                             </div>
-                            <div className="grid px-8 py-4 gap-4">
+                            <div className="grid px-6 sm:px-8 py-4 gap-4">
                                 <span className="text-sm font-medium">Other Services</span>
                                 <a href="https://www.wikitripstnt.com/evisa.html" className="text-sm text-gray-500 hover:text-primary">eVisa Assistance</a>
                                 <a href="" className="text-sm text-gray-500 hover:text-primary">Appointment Booking</a>
@@ -55,8 +52,9 @@ const Navbar = () => {
                                 <a href="" className="text-sm text-gray-500 hover:text-primary">International Passport</a>
                             </div>
                         </div>
-                    // </div>
                     }
+                    <a href="https://blog.wikitripstnt.com/" className="font-medium hover:text-primary max-sm:px-2 max-sm:py-4 max-sm:border-b-1 max-sm:border-gray-200">Blog</a>
+                    <a href="https://www.wikitripstnt.com/contact.html" className="font-medium hover:text-primary max-sm:px-2 max-sm:py-4">Contact</a>
                 </div>
             </div>
         </div>
