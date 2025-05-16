@@ -9,7 +9,7 @@ const LinkBox = ({href, img, head, desc}) => {
             <img src={img} alt="" width={32} height={32} />
             <p>
                 <span className="font-medium">{head}</span><br />
-                <span className="text-sm text-gray-500">{desc}</span>
+                <span className="max-[420px]:hidden text-sm text-gray-500">{desc}</span>
             </p>
         </a>
     )
