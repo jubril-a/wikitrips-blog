@@ -21,7 +21,7 @@ export default function Home() {
     <>
       <Hero />
       <section className="max-w-6xl mx-auto px-4 sm:px-16 py-16">
-        <MainBlog />
+      { /*<MainBlog />*/}
         <BlogContainer />
       </section>
       <Session />
