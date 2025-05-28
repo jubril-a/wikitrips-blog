@@ -11,6 +11,9 @@ const poppins = Poppins({
 export const metadata = {
   title: "Wikitrips Blog",
   description: "Wikitrips Travel & Tours Blog",
+  icons: {
+    icon: "/favicon.png", 
+  },
 };
 
 export default function RootLayout({ children }) {
